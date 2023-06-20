@@ -37,7 +37,7 @@ def logo():
 def main():
     logo()
     request = requests.get('https://9anime.me/')
-    if request.status_code == 200:       
+    if request.ok:       
             parser = NineAnime()
             parser.feed(request.text)
             for results in parser.data:
